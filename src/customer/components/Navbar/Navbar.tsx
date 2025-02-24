@@ -56,7 +56,7 @@ const Navbar = () => {
                 ShopEasy
               </h1>
             </div>
-            <ul className="flex items-center font-medium text-gray-800 ">
+            <ul className="flex items-center justify-center font-medium text-gray-800 ">
               {mainCategory.map((item, index) => (
                 <li
                   key={index}
