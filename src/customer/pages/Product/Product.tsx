@@ -31,7 +31,7 @@ const Product = () => {
     setSort(event.target.value);
   };
 
-  const handlPageChange = (value: any) => {f
+  const handlPageChange = (value: any) => {
     setPage(value);
   };
 

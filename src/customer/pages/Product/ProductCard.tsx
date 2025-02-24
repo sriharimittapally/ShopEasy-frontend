@@ -28,7 +28,7 @@ const ProductCard = ({item}:{item:Product}) => {
 
   const handleWishlist =(e:any)=>{
     e.stopPropagation()
-    item.id && dispatch(AddProductToWishlist({productId:item.id}))
+    item.id && dispatch(AddProductToWishlist(Number(item.id)))
   }
 
   return (

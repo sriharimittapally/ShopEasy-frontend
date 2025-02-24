@@ -1,6 +1,6 @@
 import { Divider } from "@mui/material";
 import ProfileFiledCard from "../../component/ProfileFiledCard";
-import { useAppDispatch, useAppSelector } from "../../State/Store";
+import { useAppSelector } from "../../State/Store";
 
 const UserDetails = () => {
   const {auth} = useAppSelector(store=>store);

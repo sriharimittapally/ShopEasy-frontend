@@ -106,12 +106,14 @@ interface CartState {
   cart: Cart | null;
   loading: boolean;
   error: string | null;
+ 
 }
 
 const initialState: CartState = {
   cart: null,
   loading: false,
   error: null,
+  c
 };
 
 const cartSlice = createSlice({

@@ -16,7 +16,7 @@ interface DrawerListProps {
   toggleDrawer: () => void;
 }
 
-const DrawerList = ({ menu, menu2, toggleDrawer }: DrawerListProps) => {
+const DrawerList = ({ menu, menu2 }: DrawerListProps) => {
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();

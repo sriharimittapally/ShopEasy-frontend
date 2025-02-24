@@ -10,7 +10,7 @@ const WishlistProductCard = ({ item }: { item: Product }) => {
   const navigate = useNavigate();
 
   const handleWishlist = () => {
-    item.id && dispatch(AddProductToWishlist({ productId: item.id }));
+    item.id && dispatch(AddProductToWishlist(Number(item.id )));
   };
 
   return (
