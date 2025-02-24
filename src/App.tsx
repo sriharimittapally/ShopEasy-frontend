@@ -8,15 +8,15 @@ import Review from "./customer/pages/Review/Review";
 import Cart from "./customer/pages/Cart/Cart";
 import CheckOut from "./customer/pages/CheckOut/CheckOut";
 import Account from "./customer/pages/Account/Account";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import BecomeSeller from "./seller/pages/BecomeSeller/BecomeSeller";
 import SellerDashboard from "./seller/pages/SellerDashboard/SellerDashboard";
 import AdminDashboard from "./admin/pages/Dashboard/AdminDashboard";
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "./State/Store";
-import { fetchSellerProfile } from "./State/seller/sellerSlice";
+
+import { useAppDispatch } from "./State/Store";
+
 import Auth from "./customer/pages/Auth/Auth";
-import { fetchUserProfile } from "./State/AuthSlice";
+import { useEffect } from "react";
 import PaymentSuccess from "./customer/pages/PaymentSuccess";
 import Wishlist from "./customer/Wishlist/Wishlist";
 import { createHomeCategories } from "./State/customer/customerSlice";
@@ -26,7 +26,7 @@ import VerifySeller from "./seller/pages/BecomeSeller/VerfiySeller";
 const App = () => {
   const dispatch = useAppDispatch();
   // const { seller, auth } = useAppSelector((store) => store);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // useEffect(() => {
   //   dispatch(fetchSellerProfile(localStorage.getItem("jwt") || ""));
@@ -38,12 +38,12 @@ const App = () => {
   //   }
   // }, [seller.profile]);
 
-  // useEffect(() => {
-  //   dispatch(
-  //     fetchUserProfile({ jwt: auth.jwt || localStorage.getItem("jwt") })
-  //   );
-  //   dispatch(createHomeCategories(homeCategories));
-  // }, [auth.jwt]);
+  useEffect(() => {
+    // dispatch(
+    //   fetchUserProfile({ jwt: auth.jwt || localStorage.getItem("jwt") })
+    // );
+    dispatch(createHomeCategories(homeCategories));
+  }, []);
   return (
     <>
       <ThemeProvider theme={customTheme}>

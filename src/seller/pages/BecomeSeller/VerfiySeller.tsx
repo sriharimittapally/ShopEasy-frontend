@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useAppSelector } from "../../../State/Store";
+//import { useAppSelector } from "../../../State/Store";
 
 const VerifySeller = () => {
   const { otp } = useParams(); 

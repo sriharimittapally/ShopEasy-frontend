@@ -32,7 +32,7 @@ const OrderDetails = () => {
 
   console.log("current Order", order.currentOrder);
 
-  const handleCancelOrder = () => {};
+  // const handleCancelOrder = () => {};
 
   return (
     <Box className="space-y-5">

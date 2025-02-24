@@ -1,5 +1,5 @@
 import { TextField } from "@mui/material";
-import React from "react";
+
 
 interface BecomeSellerFormStep3Props {
   formik: any;

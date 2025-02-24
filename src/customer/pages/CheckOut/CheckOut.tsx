@@ -14,6 +14,7 @@ import PricingCard from "../Cart/PricingCard";
 import { useAppDispatch, useAppSelector } from "../../../State/Store";
 import { createOrder } from "../../../State/customer/orderSlice";
 
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -47,6 +48,7 @@ const CheckOut = () => {
   const dispatch = useAppDispatch();
   const user = useAppSelector((store) => store.auth.user);
   const addresses = user?.addresses || [];
+  const {cart}=useAppSelector(store=>store);
 
 
   const [paymentGateway, setPaymentGateway] = useState("STRIPE");
@@ -137,7 +139,7 @@ const CheckOut = () => {
               </div>
             </div>
             <div className="border border-gray-300 rounded-md ">
-              <PricingCard />
+              <PricingCard item={cart.cartItem} />
               <div className="p-5">
                 <Button
                   sx={{ py: "11px" }}

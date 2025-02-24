@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { HomeCategory, HomeData } from "../../types/homeCategoryTypes";
 import { api } from "../../config/Api";
-import reducer from "./productSlice";
+
 
 // export const fetchHomePageData = createAsyncThunk<HomeData>(
 //   "home/fetchHomePageData",

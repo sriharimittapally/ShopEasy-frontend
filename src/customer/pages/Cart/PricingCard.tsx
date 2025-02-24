@@ -1,12 +1,14 @@
 import { Divider } from "@mui/material";
 import { useAppSelector } from "../../../State/Store";
-import { Cart, CartItemCard } from "../../../types/cartTypes";
+import { CartItemCard } from "../../../types/cartTypes";
 
 const PricingCard = ({ item }: { item: CartItemCard[] | ""}) => {
+  console.log(item);
+  
   const { cart } = useAppSelector((state) => state.cart); // Ensure correct selector
-  console.log(cart); // Debugging to check cart structure
-
-  // Handle potential null values safely
+  console.log(cart); 
+  
+  // Debugging to check cart structure
   const discountAmount =
     cart && cart.discount && cart.totalMrpPrice
       ? (cart.totalMrpPrice * cart.discount) / 100

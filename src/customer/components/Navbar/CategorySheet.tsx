@@ -18,7 +18,7 @@ export const categoryThree:{[key:string]:any[]} = {
 
 console.log(categoryThree);
 
-const CategorySheet = ({selectedCategory, setShowSheet}:any) => {
+const CategorySheet = ({selectedCategory}:any) => {
   const navigate = useNavigate();
   const childCategory = (category: any, parentCategoryId: any) => {
     return category.filter(

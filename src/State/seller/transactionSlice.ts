@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { api } from "../../config/Api";
 import { Transaction } from "../../types/transactionTypes";
-import reducer from "./sellerSlice";
+
 
 const API_URL = "/api/transactions";
 

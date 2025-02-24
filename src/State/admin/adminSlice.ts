@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { HomeCategory } from "../../types/homeCategoryTypes";
 import { api } from "../../config/Api";
-import { act } from "react";
+
 
 const API_URL = "/admin";
 

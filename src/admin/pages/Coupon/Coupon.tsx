@@ -1,9 +1,6 @@
 import { Delete } from "@mui/icons-material";
 import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
+
   Table,
   TableContainer,
   TableHead,
@@ -16,7 +13,7 @@ import {
   Button,
 } from "@mui/material";
 import { red } from "@mui/material/colors";
-import { useState } from "react";
+// import { useState } from "react";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -57,11 +54,11 @@ const rows = [
 ];
 
 const Coupon = () => {
-  const [accountStatus, setAccountStatus] = useState("ACTIVE");
+  // const [accountStatus, setAccountStatus] = useState("ACTIVE");
 
-  const handleChange = (e: any) => {
-    setAccountStatus(e.target.value);
-  };
+  // const handleChange = (e: any) => {
+  //   setAccountStatus(e.target.value);
+  // };
   return (
     <>
       <TableContainer component={Paper}>

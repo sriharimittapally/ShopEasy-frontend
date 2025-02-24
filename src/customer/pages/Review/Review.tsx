@@ -1,7 +1,9 @@
 import { Divider } from "@mui/material";
 import ReviewCard from "./ReviewCard";
+import { useAppSelector } from "../../../State/Store";
 
 const Review = () => {
+  const {product} = useAppSelector(store=>store)
   return (
     <div className="p-5 lg:px-20 flex flex-col lg:flex-row gap-20">
       <section className="w-full md:w-1/2 lg:w-[30%] space-y-2">
@@ -25,7 +27,7 @@ const Review = () => {
         </div>
       </section>
       <section className="space-y-5 w-full">
-        {[1,1,1,1,1,1,1,1].map((item)=> <div className="space-y-3"><ReviewCard/>
+        {[1,1,1,1,1,1,1,1].map((_item)=> <div className="space-y-3"><ReviewCard item={product.product}/>
       <Divider/>
       </div>)}
       </section>

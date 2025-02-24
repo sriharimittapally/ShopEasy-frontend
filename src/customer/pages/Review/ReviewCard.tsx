@@ -1,9 +1,11 @@
 import { Delete } from "@mui/icons-material";
 import { Avatar, Box, Grid2, IconButton, Rating } from "@mui/material";
 import { red } from "@mui/material/colors";
-import { Product } from "../../../types/ProductTypes";
+//import { Product } from "../../../types/ProductTypes";
 
-const ReviewCard = () => {
+const ReviewCard = ({item}:{item:any}) => {
+  
+  console.log(item);
   
   
   return (

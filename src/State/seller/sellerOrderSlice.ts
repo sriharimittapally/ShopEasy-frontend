@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { api } from "../../config/Api";
-import { Order, OrderState, OrderStatus } from "../../types/orderTypes";
+import { Order, OrderStatus } from "../../types/orderTypes";
 
 const API_URL = "/api/seller/orders";
 

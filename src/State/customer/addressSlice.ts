@@ -1,18 +1,18 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 import { api } from "../../config/Api";
 import { Address } from "../../types/userTypes";
 
 // Define the state type
-interface AddressState {
-  status: "idle" | "loading" | "succeeded" | "failed";
-  error: string | null;
-}
+// interface AddressState {
+//   status: "idle" | "loading" | "succeeded" | "failed";
+//   error: string | null;
+// }
 
-// Define initial state
-const initialState: AddressState = {
-  status: "idle",
-  error: null,
-};
+// // Define initial state
+// const initialState: AddressState = {
+//   status: "idle",
+//   error: null,
+// };
 
 
 export const addAddress = createAsyncThunk(

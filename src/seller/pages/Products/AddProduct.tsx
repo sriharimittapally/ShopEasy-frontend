@@ -42,7 +42,7 @@ const categoryThree:{[key: string]: any[]}={
 const AddProduct = () => {
   const [uploadImage, setUploadingImage] = useState(false);
 
-  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  // const [snackbarOpen, setSnackbarOpen] = useState(false);
   const navigate = useNavigate();
 
   const dispatch = useAppDispatch();
@@ -99,9 +99,9 @@ const AddProduct = () => {
 
 
 
-  const handleCloseSnackbar = () => {
-    setSnackbarOpen(false);
-  };
+  // const handleCloseSnackbar = () => {
+  //   setSnackbarOpen(false);
+  // };
 
   return (
     <div>

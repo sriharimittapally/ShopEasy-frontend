@@ -7,7 +7,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Button } from "@mui/material";
-import { Delete, Edit, TextRotationDownSharp } from "@mui/icons-material";
+import { Delete, Edit } from "@mui/icons-material";
 import { orange, red} from "@mui/material/colors";
 import { useAppDispatch, useAppSelector } from "../../../State/Store";
 import { useEffect } from "react";

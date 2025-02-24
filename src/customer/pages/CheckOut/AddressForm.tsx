@@ -1,43 +1,47 @@
 import { Box, Button, Grid2, TextField } from "@mui/material";
 import { useFormik } from "formik";
-import * as Yup from "yup"
+import * as Yup from "yup";
 import { useAppDispatch } from "../../../State/Store";
-import {addAddress} from "../../../State/customer/addressSlice"
+import { addAddress } from "../../../State/customer/addressSlice";
 
 const AddressFormSchema = Yup.object().shape({
-    name: Yup.string().required("Name is required"),
-    mobile: Yup.string().required("Mobile number is required").matches(/^[6-9]\d{9}$/, "Invalid mobile number"),
-    pinCode: Yup.string().required("Pincode is required").matches(/^[1-9][0-9]{5}$/, "Invalid pincode"),
-    address: Yup.string().required("Address is required"),
-    locality: Yup.string().required("Locality/Town is required"),
-    city: Yup.string().required("City is required"),
-    state: Yup.string().required("State is required"),
+  name: Yup.string().required("Name is required"),
+  mobile: Yup.string()
+    .required("Mobile number is required")
+    .matches(/^[6-9]\d{9}$/, "Invalid mobile number"),
+  pinCode: Yup.string()
+    .required("Pincode is required")
+    .matches(/^[1-9][0-9]{5}$/, "Invalid pincode"),
+  address: Yup.string().required("Address is required"),
+  locality: Yup.string().required("Locality/Town is required"),
+  city: Yup.string().required("City is required"),
+  state: Yup.string().required("State is required"),
+});
 
-})
-
-const AddressForm = ({paymentGateway}:any) => {
+const AddressForm = ({ paymentGateway }: any) => {
+  console.log(paymentGateway);
+  
   const dispatch = useAppDispatch();
   const formik = useFormik({
-    initialValues:{
-        name:"",
-        mobile:"",
-        address:"",
-        locality:"",
-        city:"",
-        state:"",
-        pinCode:"",
-        
+    initialValues: {
+      name: "",
+      mobile: "",
+      address: "",
+      locality: "",
+      city: "",
+      state: "",
+      pinCode: "",
     },
-    validationSchema:  AddressFormSchema,
-    onSubmit:(values) =>{
-       
-        console.log(values);
-        dispatch(addAddress({jwt:localStorage.getItem("jwt")||"", address:values}))
-        
-    }
+    validationSchema: AddressFormSchema,
+    onSubmit: (values) => {
+      console.log(values);
+      dispatch(
+        addAddress({ jwt: localStorage.getItem("jwt") || "", address: values })
+      );
+    },
   });
   return (
-    <Box sx={{max: "auto" }}>
+    <Box sx={{ max: "auto" }}>
       <p className="text-xl font-bold text-center pb-5">Add Address</p>
       <form onSubmit={formik.handleSubmit}>
         <Grid2 container spacing={3}>
@@ -77,7 +81,7 @@ const AddressForm = ({paymentGateway}:any) => {
             />
           </Grid2>
 
-          <Grid2 size={{ xs:12 }}>
+          <Grid2 size={{ xs: 12 }}>
             <TextField
               fullWidth
               name="address"
@@ -90,7 +94,7 @@ const AddressForm = ({paymentGateway}:any) => {
             />
           </Grid2>
 
-          <Grid2 size={{ xs: 12}}>
+          <Grid2 size={{ xs: 12 }}>
             <TextField
               fullWidth
               name="locality"
@@ -125,13 +129,17 @@ const AddressForm = ({paymentGateway}:any) => {
               helperText={formik.touched.state && formik.errors.state}
             />
           </Grid2>
-         
-          <Grid2 size={{xs:12}}>
-          <Button fullWidth type="submit" variant="contained" sx={{py:"14px", }}>
-                Save
+
+          <Grid2 size={{ xs: 12 }}>
+            <Button
+              fullWidth
+              type="submit"
+              variant="contained"
+              sx={{ py: "14px" }}
+            >
+              Save
             </Button>
           </Grid2>
-        
         </Grid2>
       </form>
     </Box>

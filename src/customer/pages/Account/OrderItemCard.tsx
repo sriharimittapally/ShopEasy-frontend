@@ -1,6 +1,6 @@
 import { ElectricBolt } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
-import { blue, yellow } from "@mui/material/colors";
+import { yellow } from "@mui/material/colors";
 import { Order, OrderItem } from "../../../types/orderTypes";
 import { useNavigate } from "react-router-dom";
 

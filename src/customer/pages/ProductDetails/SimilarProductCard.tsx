@@ -1,6 +1,6 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Product } from "../../../types/ProductTypes";
-import { useSearchParam } from "react-use";
+
 
 const SimilarProductCard = ({item}:{item:Product}) => {
   const navigate = useNavigate();

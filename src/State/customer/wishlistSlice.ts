@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Wishlist, WishlistState } from "../../types/wishlistTypes";
 import { api } from "../../config/Api";
-import { create } from "@mui/material/styles/createTransitions";
+
 
 
 
@@ -35,7 +35,7 @@ export const getWishlistByUserId = createAsyncThunk(
 
 export const AddProductToWishlist = createAsyncThunk(
     "wishlist/addProductToWishlist",
-    async({productId}:{productId:number}, {rejectWithValue})=>{
+    async(productId:number, {rejectWithValue})=>{
         try {
             const response = await api.post(`/api/wishlist/add-product/${productId}`,{
 
@@ -77,7 +77,7 @@ const wishlistSlice = createSlice({
             state.wishlist= action.payload;
             state.loading = false;
         });
-        builder.addCase(getWishlistByUserId.rejected,(state, action:PayloadAction<any>)=>{
+        builder.addCase(getWishlistByUserId.rejected,(state)=>{
             state.loading = true;
             state.error = null;
         });

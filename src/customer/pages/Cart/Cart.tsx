@@ -1,4 +1,4 @@
-import { Close, LocalOffer, ShoppingCart, ShoppingCartOutlined } from "@mui/icons-material";
+import { Close, LocalOffer, ShoppingCartOutlined } from "@mui/icons-material";
 import CartItem from "./CartItem";
 import { blue } from "@mui/material/colors";
 import { Button, IconButton, TextField } from "@mui/material";
@@ -7,10 +7,9 @@ import PricingCard from "./PricingCard";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../State/Store";
 import {
-  deleteCartItem,
   fetchUserCart,
 } from "../../../State/customer/cartSlice";
-import { boolean } from "yup";
+
 
 const Cart = () => {
   const [couponCode, setCouponCode] = useState("");

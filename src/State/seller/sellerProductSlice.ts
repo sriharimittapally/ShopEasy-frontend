@@ -16,6 +16,7 @@ export const fetchSellerProducts = createAsyncThunk<Product[], any>(
       return data;
     } catch (error) {
       console.log("error - - ", error);
+      rejectWithValue("Error")
       throw error;
     }
   }
@@ -35,6 +36,7 @@ export const createProduct = createAsyncThunk<
     console.log("Product created", response.data);
     return response.data;
   } catch (error) {
+    rejectWithValue("Error")
     console.error(error);
     // throw error;
   }

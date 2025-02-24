@@ -14,6 +14,7 @@ export const fetchSellerProfile = createAsyncThunk(
       console.log("Fetch seller Profile", response.data);
       return response.data;
     } catch (error) {
+      rejectWithValue("Error")
       console.log("error - - ", error);
     }
   }
@@ -28,6 +29,7 @@ export const createSeller = createAsyncThunk(
       console.log("Seller account created Succesfully");
       return response.data;
     } catch (error) {
+      rejectWithValue("Error")
       console.log("Error-->", error);
     }
   }
@@ -43,6 +45,7 @@ export const verifySeller = createAsyncThunk(
       console.log("Email verified");
       return response.data;
     } catch (error) {
+      rejectWithValue("Error")
       console.log("Error-->", error);
     }
   }

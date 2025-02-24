@@ -23,7 +23,7 @@ const Product = () => {
   const [sort, setSort] = useState();
   const [page, setPage] = useState(1);
   const dispatch = useAppDispatch();
-  const [searchParams,setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const {category}=useParams();
   const {product }=useAppSelector((store=>store))
 
@@ -31,7 +31,7 @@ const Product = () => {
     setSort(event.target.value);
   };
 
-  const handlPageChange = (value: number) => {
+  const handlPageChange = (value: any) => {f
     setPage(value);
   };
 
@@ -104,7 +104,7 @@ const Product = () => {
           </section>
           <div className="flex justify-center py-10">
               <Pagination
-                onChange={(e, value) => handlPageChange(value)}
+                onChange={( value) => handlPageChange(value)}
                 count={10}
                 variant="outlined"
                 shape="rounded"

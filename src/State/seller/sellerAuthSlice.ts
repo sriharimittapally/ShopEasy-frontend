@@ -11,6 +11,7 @@ export const sellerLogin = createAsyncThunk<any, any>(
         localStorage.setItem("jwt", jwt);
         navigate("/seller")
       } catch (error) {
+        rejectWithValue("Error")
         console.log("error - - -", error);
       }
     }

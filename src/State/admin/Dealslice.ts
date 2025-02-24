@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { ApiResponse, DealState } from "../../types/dealTypes";
+import {DealState } from "../../types/dealTypes";
 import { api } from "../../config/Api";
 
 const initialState: DealState = {

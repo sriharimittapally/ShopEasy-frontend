@@ -28,7 +28,7 @@ const ProductDetails = () => {
   const { productId } = useParams();
   const { product } = useAppSelector((store) => store);
   const [activeImage, setActiveImage] = useState(0);
-  const { cart, wishlist } = useAppSelector((store) => store);
+  const { cart } = useAppSelector((store) => store);
   const navigate = useNavigate();
   const [similarProducts, setSimilarProducts] = useState<any[]>([]);
 
@@ -41,19 +41,19 @@ const ProductDetails = () => {
   }, [productId]);
 
   useEffect(() => {
-    // After fetching all products, find similar products based on category or other criteria
+   
     if (product.product && product.products.length > 0) {
       const similar = product.products.filter(
         (prod: any) =>
           prod.category?.name === product.product?.category?.name &&
-          prod.id !== product.product.id
+          prod.id !== product.product?.id
       );
       setSimilarProducts(similar);
     }
   }, [product.product, product.products]);
 
    const handleWishlist = () => {
-       dispatch(AddProductToWishlist({productId}));
+       dispatch(AddProductToWishlist(Number(productId)));
     };
   
 

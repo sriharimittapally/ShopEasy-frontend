@@ -12,6 +12,7 @@ export const sendLoginSignupOtp = createAsyncThunk<any, any>(
       });
       console.log("Login otp ", response);
     } catch (error) {
+      rejectWithValue("Error")
       console.log("error - - -", error);
     }
   }
@@ -27,6 +28,7 @@ export const signin = createAsyncThunk<any, any>(
       navigate("/account")
       return response.data.jwt;
     } catch (error) {
+      rejectWithValue("Error")
       console.log("error - - -", error);
     }
   }
@@ -42,6 +44,7 @@ export const signup = createAsyncThunk<any, any>(
       navigate("/account")
       return response.data.jwt;
     } catch (error) {
+      rejectWithValue("Error")
       console.log("error - - -", error);
     }
   }
@@ -62,6 +65,7 @@ export const fetchUserProfile = createAsyncThunk<any, any>(
       console.log("user profile ", response.data);
       return response.data;
     } catch (error) {
+      rejectWithValue("Error")
       console.log("error - - -", error);
     }
   }
@@ -77,6 +81,7 @@ export const logout = createAsyncThunk<any, any>(
       console.log("logout successful");
       navigate("/");
     } catch (error) {
+      rejectWithValue("Error")
       console.log("error - - - ", error);
     }
   }
