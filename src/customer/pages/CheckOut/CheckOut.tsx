@@ -139,7 +139,7 @@ const CheckOut = () => {
               </div>
             </div>
             <div className="border border-gray-300 rounded-md ">
-              <PricingCard item={cart.cart?.cartItems.map(item=>item)} />
+              <PricingCard item={cart.cart?.cartItems.map((item=>item))||[]} />
               <div className="p-5">
                 <Button
                   sx={{ py: "11px" }}

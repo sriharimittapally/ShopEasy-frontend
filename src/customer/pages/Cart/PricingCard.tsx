@@ -2,7 +2,7 @@ import { Divider } from "@mui/material";
 import { useAppSelector } from "../../../State/Store";
 import { CartItemCard } from "../../../types/cartTypes";
 
-const PricingCard = ({ item }: { item: CartItemCard[] | ""}) => {
+const PricingCard = ({ item }: { item: CartItemCard[]}) => {
   console.log(item);
   
   const { cart } = useAppSelector((state) => state.cart); // Ensure correct selector
